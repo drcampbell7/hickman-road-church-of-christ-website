@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home — Hickman Road Church of Christ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="scss/main.css" />
+</head>
+
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner" class="site-header">
+        <div class="site-header__inner">
+            <a href="index.html" class="site-header__logo" aria-label="Hickman Road Church of Christ — go to home page">
+                <img src="images/logo-full.png" alt="" aria-hidden="true" class="logo-full" />
+                <img src="images/logo-bug.png" alt="" aria-hidden="true" class="logo-bug" />
+            </a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html" class="site-nav__link" aria-current="page">Home</a>
+                <a href="ministries.html" class="site-nav__link">Ministries</a>
+                <a href="about.html" class="site-nav__link">About / Plan a Visit</a>
+                <a href="contact.html" class="site-nav__link">Contact</a>
+                <a href="https://www.facebook.com/hickmanroadchurchofchrist" class="site-nav__cta" target="_blank" rel="noopener noreferrer">Watch Live</a>
+            </nav>
+            <button class="hamburger" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false"
+                aria-controls="mobile-nav">
+                <svg id="icon-menu" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+                <svg id="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" aria-hidden="true" style="display:none;">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-nav" class="mobile-nav" hidden role="navigation" aria-label="Mobile navigation">
+            <a href="index.html" class="mobile-nav__link" aria-current="page">Home</a>
+            <a href="ministries.html" class="mobile-nav__link">Ministries</a>
+            <a href="about.html" class="mobile-nav__link">About / Plan a Visit</a>
+            <a href="contact.html" class="mobile-nav__link">Contact</a>
+            <a href="https://www.facebook.com/hickmanroadchurchofchrist" class="mobile-nav__link mobile-nav__link--cta" target="_blank" rel="noopener noreferrer">Watch Live</a>
+        </div>
+    </header>
+
+    <main id="main-content" tabindex="-1" style="outline:none;">
+
+        <!-- Hero -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <img src="images/hickman_road_hero_2500x1250.webp" alt="Hickman Road Church of Christ congregation holding hands and praising God" aria-hidden="true" class="hero__bg" />
+            <div class="hero__inner">
+                <div class="hero__content">
+                    <span class="hero__eyebrow" aria-hidden="true">Welcome Home</span>
+                    <h1 id="hero-heading" class="hero__heading">Rooted in Faith.<br>Open to All.</h1>
+                    <p class="hero__body">A community gathering to worship, grow, and serve — right here on Hickman Road.</p>
+                    <div class="hero__actions">
+                        <a href="about.html" class="btn btn--accent">Plan a Visit</a>
+                        <a href="https://www.facebook.com/hickmanroadchurchofchrist" class="btn btn--outline-white" target="_blank" rel="noopener noreferrer">Watch Live</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Strip -->
+        <div class="social-strip" aria-label="Connect with us online">
+            <div class="social-strip__inner">
+                <a href="https://www.facebook.com/hickmanroadchurchofchrist" class="social-strip__item" target="_blank" rel="noopener noreferrer"
+                    aria-label="Join our Facebook Live service every Sunday at 10:30 am">
+                    <svg class="social-strip__item-icon" width="24" height="24" viewBox="0 0 24 24" fill="#1a56c4"
+                        aria-hidden="true">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                    </svg>
+                    <div>
+                        <div class="social-strip__item-label">Facebook Live</div>
+                        <div class="social-strip__item-sub">Join us live every Sunday at 9:30 & 10:30 am and Wednesday's at 6:30 pm</div>
+                    </div>
+                    <svg class="social-strip__item-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/hickmanroadchurchofchrist" class="social-strip__item" aria-label="Follow @hickmanroadchurchofchrist on Instagram" target="_blank" rel="noopener noreferrer">
+                    <svg class="social-strip__item-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="#9b237f" stroke-width="2" aria-hidden="true">
+                        <rect x="2" y="2" width="20" height="20" rx="5" />
+                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                    <div>
+                        <div class="social-strip__item-label">Instagram Feed</div>
+                        <div class="social-strip__item-sub">@hickmanroadchurchofchrist — Follow our community</div>
+                    </div>
+                    <svg class="social-strip__item-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Mission Band -->
+        <section class="mission-band" aria-labelledby="mission-band-heading">
+            <div class="mission-band__inner">
+                <span class="mission-band__eyebrow" aria-hidden="true">Our Mission</span>
+                <h2 id="mission-band-heading" class="mission-band__text">
+                    Loving God<br>Serving others<br>Growing as His disciples<br>Bringing Jesus to the lost
+                    <span class="coda"><strong>All for the glory of His kingdom.</strong></span>
+                </h2>
+            </div>
+        </section>
+
+        <!-- Ministries Preview -->
+        <section class="ministries-preview" aria-labelledby="min-preview-heading">
+            <div class="ministries-preview__inner">
+                <div class="ministries-preview__header">
+                    <span class="eyebrow">Get Involved</span>
+                    <h2 id="min-preview-heading">Our Ministries</h2>
+                </div>
+                <div class="ministries-preview__grid">
+
+                    <div class="ministry-card">
+                        <div class="ministry-card__image">
+                            <img src="images/Joppa_387x224.jpg"
+                                alt="Outreach ministry" />
+                        </div>
+                        <div class="ministry-card__body">
+                            <span class="ministry-card__eyebrow">Ministry</span>
+                            <h3 class="ministry-card__heading">Outreach</h3>
+                            <p class="ministry-card__desc">Serving neighbors through food drives, community events, and
+                                mission partnerships near and far.</p>
+                            <a href="ministries.html#outreach" class="ministry-card__link">Learn More ›</a>
+                        </div>
+                    </div>
+
+                    <div class="ministry-card">
+                        <div class="ministry-card__image">
+                            <img src="images/lock-in_387x224.jpg"
+                                alt="Youth ministry" />
+                        </div>
+                        <div class="ministry-card__body">
+                            <span class="ministry-card__eyebrow">Ministry</span>
+                            <h3 class="ministry-card__heading">Youth</h3>
+                            <p class="ministry-card__desc">Building the next generation of faith through Bible study,
+                                retreats, and intentional mentorship.</p>
+                            <a href="ministries.html#youth" class="ministry-card__link">Learn More ›</a>
+                        </div>
+                    </div>
+
+                    <div class="ministry-card">
+                        <div class="ministry-card__image">
+                            <img src="images/game_night_387x224.jpg"
+                                alt="Fellowship ministry" />
+                        </div>
+                        <div class="ministry-card__body">
+                            <span class="ministry-card__eyebrow">Ministry</span>
+                            <h3 class="ministry-card__heading">Fellowship</h3>
+                            <p class="ministry-card__desc">Connecting families and individuals through shared meals,
+                                small groups, and celebration.</p>
+                            <a href="ministries.html#fellowship" class="ministry-card__link">Learn More ›</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer" aria-label="Site footer">
+        <div class="site-footer__inner">
+            <div class="site-footer__grid">
+                <div class="site-footer__col">
+                    <h2 class="site-footer__heading">Find Us</h2>
+                    <div style="display:flex;align-items:flex-start;gap:0.5rem;margin-bottom:1rem;">
+                        <svg class="ft-icon" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <address>5217 Hickman Road<br>Des Moines, IA 50310</address>
+                    </div>
+                    <div class="site-footer__map-placeholder">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d47726.13663338739!2d-93.690954!3d41.61503!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87ee9e9b1088c731%3A0x2dcc5c05e4bc207!2sHickman%20Road%20Church%20of%20Christ!5e0!3m2!1sen!2sus!4v1785357381232!5m2!1sen!2sus"
+                            width="100%"
+                            height="100%"
+                            style="border:0; min-height:7rem;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            title="Footer map showing Hickman Road Church of Christ location">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="site-footer__col">
+                    <h2 class="site-footer__heading">Service Times</h2>
+                    <ul class="site-footer__schedule" aria-label="Weekly service schedule">
+                        <li>
+                            <svg class="ft-icon" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            <div><strong>Sunday Morning</strong>
+                                <div>Bible Class · 9:30 am</div>
+                                <div>Worship · 10:30 am</div>
+                            </div>
+                        </li>
+                        <li>
+                            <svg class="ft-icon" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            <div><strong>Wednesday</strong>
+                                <div>Bible Study · 6:30 pm</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-footer__col">
+                    <h2 class="site-footer__heading">Connect</h2>
+                    <nav class="site-footer__social" aria-label="Social media links">
+                        <a href="https://www.facebook.com/hickmanroadchurchofchrist" aria-label="Visit our Facebook page" target="_blank" rel="noopener noreferrer">
+                            <svg class="ft-icon" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"
+                                aria-hidden="true">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                            </svg> Facebook
+                        </a>
+                        <a href="https://www.instagram.com/hickmanroadchurchofchrist/" aria-label="Visit our Instagram profile" target="_blank" rel="noopener noreferrer">
+                            <svg class="ft-icon" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg> Instagram
+                        </a>
+                    </nav>
+                    <a href="https://www.youtube.com/@hickmanroadchurchofchrist6056" class="site-footer__archive" aria-label="Browse sermon archive recordings" target="_blank" rel="noopener noreferrer">
+                        <svg class="ft-icon" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 00-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+                            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+                        </svg>
+                        YouTube Video Archive
+                    </a>
+                    <p class="site-footer__copy">© 2026 Hickman Road Church of Christ</p>
+                    <p class="site-footer__copy">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

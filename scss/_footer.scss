@@ -1,0 +1,174 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// _footer.scss — Site footer, 3-column grid layout
+// ─────────────────────────────────────────────────────────────────────────────
+
+@use 'variables' as *;
+@use 'mixins'    as *;
+
+.site-footer {
+  background-color: $color-footer-bg;
+  color: #ffffff;
+
+  &__inner {
+    @include container;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  // CSS Grid: 1 column on mobile → 3 columns on tablet+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+
+    @include respond-to($bp-md) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+    }
+  }
+
+  // Column headings
+  &__heading {
+    font-family: $font-display;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+  }
+
+  // Descendant selectors — style text content inside footer columns
+  &__col p,
+  &__col address {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  // Inline map placeholder
+  &__map-placeholder {
+    width: 100%;
+    height: 7rem;
+    margin-top: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 0.15em;
+    }
+  }
+
+  // Service times list
+  &__schedule {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.85);
+
+      .ft-icon {
+        flex-shrink: 0;
+        margin-top: 3px;
+        color: $color-accent;
+      }
+
+      strong {
+        display: block;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 0.1rem;
+      }
+    }
+  }
+
+  // Social links — Flexbox row, stacks on very small screens
+  &__social {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+
+    // Group selector — style both social links the same way
+    a,
+    a:visited {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: color $transition-fast;
+
+      &:hover {
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      .ft-icon {
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  // Sermon archive link
+  &__archive {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    text-decoration: none;
+    transition: background-color $transition-fast;
+
+    .ft-icon {
+      color: $color-accent;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+    }
+  }
+
+  // Copyright line
+  &__copy {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.55);
+
+    // Attribute selector — style any links inside copyright line
+    a[href] {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: underline;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+
+    &:first-of-type { margin-top: 2.5rem; }
+  }
+
+  // SCSS source link — satisfies class requirement for visible link to stylesheet
+  &__scss-link {
+    font-size: 0.7rem;
+    font-family: $font-body;
+    color: rgba(255, 255, 255, 0.45);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color $transition-fast;
+
+    &:hover { color: rgba(255, 255, 255, 0.8); }
+  }
+}

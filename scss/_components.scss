@@ -1,0 +1,563 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// _components.scss — Reusable UI components: buttons, cards, forms, etc.
+// ─────────────────────────────────────────────────────────────────────────────
+
+@use 'sass:color';
+@use 'variables' as *;
+@use 'mixins'    as *;
+
+// ─── Skip Link ────────────────────────────────────────────────────────────────
+
+.skip-link {
+  @include sr-only;
+
+  &:focus {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 100;
+    width: auto;
+    height: auto;
+    padding: 0.75rem 1.25rem;
+    margin: 0;
+    clip: auto;
+    white-space: normal;
+    overflow: visible;
+    background-color: $color-primary;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    box-shadow: $shadow-md;
+    text-decoration: none;
+  }
+}
+
+// ─── Demo / Wireframe Bar ────────────────────────────────────────────────────
+
+.demo-bar {
+  background-color: $color-fg;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  font-family: $font-body;
+  font-size: 0.75rem;
+
+  &__label   { opacity: 0.45; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
+  &__divider { opacity: 0.2; }
+
+  &__btn {
+    padding: 0.25rem 0.75rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: $font-body;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.55);
+    transition: color $transition-fast;
+
+    &:hover { color: #ffffff; }
+
+    &--active {
+      background-color: $color-accent;
+      color: $color-accent-text;
+      font-weight: 600;
+    }
+  }
+}
+
+// ─── Buttons ─────────────────────────────────────────────────────────────────
+
+.btn {
+  @include btn-base;
+
+  // Primary — dark sky blue background
+  &--primary {
+    background-color: $color-primary;
+    color: $color-primary-text;
+
+    &:hover { background-color: color.adjust($color-primary, $lightness: -8%); }
+  }
+
+  // Accent — orange background with dark text for contrast
+  &--accent {
+    background-color: $color-accent;
+    color: $color-accent-text;
+
+    &:hover { background-color: color.adjust($color-accent, $lightness: -10%); }
+  }
+
+  // Outline on light backgrounds
+  &--outline {
+    background-color: transparent;
+    color: $color-primary;
+    border: 2px solid $color-primary;
+
+    &:hover { background-color: rgba($color-primary, 0.07); }
+  }
+
+  // Outline on dark/photo backgrounds
+  &--outline-white {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.65);
+
+    &:hover { background-color: rgba(255, 255, 255, 0.12); }
+  }
+
+  // Full-width modifier
+  &--full { width: 100%; }
+}
+
+// ─── Section Label (Eyebrow) ─────────────────────────────────────────────────
+
+.eyebrow {
+  @include eyebrow;
+  display: block;
+  margin-bottom: 0.625rem;
+
+  &--white {
+    @include eyebrow(rgba(255, 255, 255, 0.72));
+  }
+}
+
+// ─── Ministry Card ───────────────────────────────────────────────────────────
+
+.ministry-card {
+  border: 1px solid $color-border;
+  background-color: $color-bg;
+  display: flex;
+  flex-direction: column;
+  @include card-hover;
+
+  &__image {
+    height: 13rem;
+    overflow: hidden;
+    background-color: $color-secondary;
+
+    img {
+      @include img-cover;
+      transform: scale(1);
+      transition: transform 0.55s ease;
+    }
+  }
+
+  // Transform on card hover targets descendant image
+  &:hover &__image img {
+    transform: scale(1.07);
+  }
+
+  &__body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__eyebrow { @include eyebrow; margin-bottom: 0.4rem; }
+
+  &__heading {
+    font-family: $font-display;
+    font-size: 1.25rem;
+    color: $color-fg;
+    margin-bottom: 0.6rem;
+  }
+
+  &__desc {
+    font-size: 0.875rem;
+    color: $color-muted-fg;
+    line-height: 1.65;
+    margin-bottom: 1rem;
+    flex: 1;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $color-primary;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: gap $transition-fast, color $transition-fast;
+
+    &:hover { gap: 0.6rem; text-decoration: none; }
+  }
+}
+
+// ─── Social Strip ────────────────────────────────────────────────────────────
+
+.social-strip {
+  background-color: $color-secondary;
+  border-bottom: 1px solid $color-border;
+
+  &__inner {
+    @include container;
+    @include flex-row(1rem, stretch, flex-start);
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  &__item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background-color: $color-bg;
+    border: 1px solid $color-border;
+    text-decoration: none;
+    transition: border-color $transition-normal;
+
+    &:hover {
+      border-color: rgba($color-primary, 0.4);
+      text-decoration: none;
+    }
+
+    &-icon  { flex-shrink: 0; }
+
+    &-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: $color-muted-fg;
+      margin-bottom: 0.15rem;
+    }
+
+    &-sub {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: $color-fg;
+    }
+
+    &-arrow {
+      margin-left: auto;
+      color: $color-muted-fg;
+      flex-shrink: 0;
+      transition: color $transition-fast, transform $transition-fast;
+    }
+
+    &:hover &-arrow {
+      color: $color-primary;
+      transform: translateX(4px);
+    }
+  }
+}
+
+// ─── Mission Band ────────────────────────────────────────────────────────────
+
+.mission-band {
+  background-color: $color-primary;
+  padding: 5rem 1.5rem;
+  text-align: center;
+
+  &__inner {
+    max-width: 46rem;
+    margin-inline: auto;
+  }
+
+  &__eyebrow {
+    @include eyebrow(rgba(255, 255, 255, 0.7));
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  &__text {
+    font-family: $font-display;
+    font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+    font-weight: 700;
+    font-style: italic;
+    color: #ffffff;
+    line-height: 1.55;
+
+    .coda {
+      display: block;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1em;
+      color: rgb(255, 255, 255);
+      margin-top: 0.75rem;
+    }
+  }
+}
+
+// ─── Service Times Card (Hero overlay) ───────────────────────────────────────
+
+.times-card {
+  background-color: rgba(235, 249, 253, 0.75);
+  padding: 2rem;
+  box-shadow: $shadow-lg;
+
+  &__heading {
+    font-family: $font-display;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: $color-fg;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid $color-border;
+    margin-bottom: 1.25rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    // Descendant selectors
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+
+      .tc-icon { flex-shrink: 0; margin-top: 2px; color: $color-primary; }
+      strong   { display: block; font-weight: 600; color: $color-fg; margin-bottom: 0.1rem; }
+      span     { color: $color-muted-fg; }
+    }
+  }
+}
+
+// ─── Person Card ─────────────────────────────────────────────────────────────
+
+.person-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid $color-border;
+  padding: 1.25rem;
+
+  &__avatar {
+    border-radius: $radius-pill;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: $color-secondary;
+
+    img { @include img-cover; }
+
+    // Size variants
+    &--md { width: 3rem;   height: 3rem;   }
+    &--lg { width: 4.5rem; height: 4.5rem; }
+  }
+
+  &__name {
+    font-family: $font-display;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $color-fg;
+    margin-bottom: 0.2rem;
+  }
+
+  &__role {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: $color-primary;
+    margin-bottom: 0.2rem;
+  }
+
+  &__meta {
+    font-size: 0.75rem;
+    color: $color-muted-fg;
+  }
+}
+
+// ─── Deacon Tag ──────────────────────────────────────────────────────────────
+
+.deacon-tag {
+  border: 1px solid $color-border;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+
+  &__name { font-weight: 600; color: $color-fg; margin-bottom: 0.15rem; }
+  &__role { font-size: 0.75rem; color: $color-muted-fg; }
+}
+
+// ─── Belief Item ─────────────────────────────────────────────────────────────
+
+.belief-item {
+  border-left: 4px solid $color-accent;
+  padding-left: 1.25rem;
+
+  // Descendant selectors
+  h3 {
+    font-family: $font-display;
+    font-size: 1rem;
+    font-weight: 700;
+    color: $color-fg;
+    margin-bottom: 0.3rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: $color-muted-fg;
+    line-height: 1.65;
+  }
+}
+
+// ─── Map Placeholder ──────────────────────────────────────────────────────────
+
+.map-placeholder {
+  background-color: $color-secondary;
+  border: 1px solid $color-border;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 16rem;
+  gap: 0.5rem;
+  color: $color-muted-fg;
+
+  .mp-icon { opacity: 0.3; }
+  span     { font-size: 0.7rem; opacity: 0.5; letter-spacing: 0.15em; }
+}
+
+// ─── Dot Bullet List ─────────────────────────────────────────────────────────
+
+.dot-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  // Descendant + pseudo selector
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 0.875rem;
+    color: $color-fg;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      background-color: $color-accent;
+      border-radius: $radius-pill;
+      flex-shrink: 0;
+    }
+  }
+}
+
+// ─── Contact Form ────────────────────────────────────────────────────────────
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+
+    @include respond-to($bp-md) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+
+  &__label {
+    font-family: $font-body;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $color-fg;
+
+    // Descendant: required asterisk inside label
+    .required {
+      color: $color-error;
+      margin-left: 0.2rem;
+    }
+  }
+
+  // Attribute selectors — style every input type consistently
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-family: $font-body;
+    font-size: 0.9375rem;
+    color: $color-fg;
+    background-color: $color-muted;
+    border: 1.5px solid $color-border;
+    border-radius: $radius-sm;
+    transition:
+      border-color     $transition-fast,
+      box-shadow       $transition-fast,
+      background-color $transition-fast;
+    appearance: none;
+
+    &::placeholder { color: $color-muted-fg; }
+
+    &:hover { border-color: rgba($color-primary, 0.45); }
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary;
+      background-color: $color-bg;
+      box-shadow: 0 0 0 3px rgba($color-primary, 0.15);
+    }
+
+    // Visual feedback for HTML5 validity
+    &:valid:not(:placeholder-shown) { border-color: $color-success; }
+    &:invalid:not(:placeholder-shown) { border-color: $color-error; }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 9rem;
+    line-height: 1.6;
+  }
+
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23595961' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.875rem center;
+    padding-right: 2.5rem;
+  }
+
+  &__hint {
+    font-size: 0.8rem;
+    color: $color-muted-fg;
+    margin-top: 0.25rem;
+  }
+
+  &__error {
+    font-size: 0.8rem;
+    color: $color-error;
+    margin-top: 0.25rem;
+  }
+
+  &__submit {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+  }
+
+  // Success message
+  &__success {
+    padding: 1.25rem 1.5rem;
+    background-color: rgba($color-success, 0.1);
+    border: 1.5px solid rgba($color-success, 0.35);
+    border-radius: $radius-md;
+    color: color.adjust($color-success, $lightness: -8%);
+    font-size: 0.9rem;
+    line-height: 1.6;
+
+    strong { display: block; font-size: 1rem; margin-bottom: 0.25rem; }
+  }
+}

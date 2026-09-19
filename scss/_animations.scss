@@ -1,0 +1,75 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// _animations.scss — Keyframes, transitions, and transform utilities
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ─── Keyframe Definitions ────────────────────────────────────────────────────
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.03); }
+}
+
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to   { background-position:  200% 0; }
+}
+
+// ─── Animation Utility Classes ────────────────────────────────────────────────
+
+.anim-fade-in-up {
+  animation: fadeInUp 0.65s ease both;
+}
+
+.anim-fade-in {
+  animation: fadeIn 0.5s ease both;
+}
+
+.anim-slide-in-left {
+  animation: slideInLeft 0.55s ease both;
+}
+
+// Staggered delay helpers
+.anim-delay-1 { animation-delay: 0.1s; }
+.anim-delay-2 { animation-delay: 0.2s; }
+.anim-delay-3 { animation-delay: 0.3s; }
+.anim-delay-4 { animation-delay: 0.4s; }
+.anim-delay-5 { animation-delay: 0.5s; }
+
+// ─── Respect reduced motion ───────────────────────────────────────────────────
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-in-up,
+  .anim-fade-in,
+  .anim-slide-in-left {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

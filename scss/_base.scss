@@ -1,0 +1,136 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// _base.scss — Global reset additions and root element defaults
+// ─────────────────────────────────────────────────────────────────────────────
+
+@use 'variables' as *;
+@use 'mixins'    as *;
+
+// ─── Box Model ───────────────────────────────────────────────────────────────
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// ─── Root ────────────────────────────────────────────────────────────────────
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: $font-body;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: $color-fg;
+  background-color: $color-bg;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ─── Typography defaults ─────────────────────────────────────────────────────
+// Group selector — shared heading styles
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-display;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $color-fg;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+// ─── Links ───────────────────────────────────────────────────────────────────
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// ─── Media ───────────────────────────────────────────────────────────────────
+
+img,
+picture,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+// ─── Lists ───────────────────────────────────────────────────────────────────
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// ─── Forms ───────────────────────────────────────────────────────────────────
+
+button {
+  font-family: $font-body;
+  cursor: pointer;
+}
+
+// ─── Address ─────────────────────────────────────────────────────────────────
+
+address {
+  font-style: normal;
+}
+
+// ─── Focus visible — accessible keyboard focus rings ─────────────────────────
+// Advanced selector: group selector + :focus-visible pseudo-class
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid $color-primary;
+  outline-offset: 3px;
+}
+
+// ─── Reduced motion ──────────────────────────────────────────────────────────
+// Respects the user's OS accessibility preference
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+// ─── Utility: screen-reader only ─────────────────────────────────────────────
+
+.sr-only {
+  @include sr-only;
+}
+
+// ─── Descendant selector: headings inside dark sections turn white ────────────
+
+.section--primary h1,
+.section--primary h2,
+.section--primary h3,
+.section--primary p,
+.mission-band h1,
+.mission-band h2 {
+  color: #ffffff;
+}

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Hickman Road Church of Christ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="scss/main.css" />
+</head>
+
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner" class="site-header">
+        <div class="site-header__inner">
+            <a href="index.html" class="site-header__logo" aria-label="Hickman Road Church of Christ — go to home page">
+                <img src="images/logo-full.png" alt="" aria-hidden="true" class="logo-full" />
+                <img src="images/logo-bug.png" alt="" aria-hidden="true" class="logo-bug" />
+            </a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html" class="site-nav__link">Home</a>
+                <a href="ministries.html" class="site-nav__link">Ministries</a>
+                <a href="about.html" class="site-nav__link">About / Plan a Visit</a>
+                <a href="contact.html" class="site-nav__link" aria-current="page">Contact</a>
+                <a href="https://www.facebook.com/hickmanroadchurchofchrist" class="site-nav__cta" target="_blank" rel="noopener noreferrer">Watch Live</a>
+            </nav>
+            <button class="hamburger" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false"
+                aria-controls="mobile-nav">
+                <svg id="icon-menu" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+                <svg id="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" aria-hidden="true" style="display:none;">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-nav" class="mobile-nav" hidden role="navigation" aria-label="Mobile navigation">
+            <a href="index.html" class="mobile-nav__link">Home</a>
+            <a href="ministries.html" class="mobile-nav__link">Ministries</a>
+            <a href="about.html" class="mobile-nav__link">About / Plan a Visit</a>
+            <a href="contact.html" class="mobile-nav__link" aria-current="page">Contact</a>
+            <a href="#watch" class="mobile-nav__link mobile-nav__link--cta">Watch Live</a>
+        </div>
+    </header>
+
+    <main id="main-content" tabindex="-1" style="outline:none;">
+
+        <div class="contact-intro" aria-labelledby="contact-heading">
+            <div class="contact-intro__inner">
+                <span class="eyebrow">Get in Touch</span>
+                <h1 id="contact-heading">Contact Us</h1>
+                <p>We would love to hear from you. Reach out with questions, prayer requests, or just to say hello — someone from our team will get back to you soon.</p>
+            </div>
+        </div>
+
+        <div class="contact-body">
+            <div class="contact-body__inner">
+
+                <!-- Form -->
+                <div>
+                    <h2 class="contact-body__heading">Send a Message</h2>
+                    <p class="contact-body__subheading">Fields marked with <span style="color:#b91c1c;">*</span> are
+                        required.</p>
+
+                    <form class="form" action="#" method="post" novalidate aria-label="Contact form">
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label class="form__label" for="full-name">Full Name <span class="required"
+                                        aria-hidden="true">*</span></label>
+                                <input type="text" id="full-name" name="full-name" placeholder="Jane Smith" required
+                                    autocomplete="name" />
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label" for="email">Email Address <span class="required"
+                                        aria-hidden="true">*</span></label>
+                                <input type="email" id="email" name="email" placeholder="jane@example.com" required
+                                    autocomplete="email" />
+                            </div>
+                        </div>
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label class="form__label" for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(515) 555-0100"
+                                    autocomplete="tel" />
+                                <span class="form__hint">Optional — we will not call without permission.</span>
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label" for="subject">Subject <span class="required"
+                                        aria-hidden="true">*</span></label>
+                                <select id="subject" name="subject" required>
+                                    <option value="" disabled selected>Select a topic…</option>
+                                    <option value="general">General Question</option>
+                                    <option value="visit">Planning a Visit</option>
+                                    <option value="prayer">Prayer Request</option>
+                                    <option value="ministries">Ministries &amp; Groups</option>
+                                    <option value="giving">Giving &amp; Donations</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label" for="message">Message <span class="required"
+                                    aria-hidden="true">*</span></label>
+                            <textarea id="message" name="message" placeholder="How can we help you?"
+                                required></textarea>
+                        </div>
+                        <div class="form__submit">
+                            <button type="submit" class="btn btn--primary">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Sidebar -->
+                <aside aria-label="Contact information" class="contact-sidebar">
+                    <h2 class="contact-sidebar__heading">Contact Information</h2>
+                    <div class="contact-sidebar__item">
+                        <svg class="cs-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <address>5217 Hickman Road<br>Des Moines, IA 50310</address>
+                    </div>
+                    <div class="contact-sidebar__item">
+                        <svg class="cs-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path
+                                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .82h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11l-1.27 1.27a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                        </svg>
+                        <div><a href="tel:+15152558055">(515) 255-8055</a></div>
+                    </div>
+                    <div class="contact-sidebar__item">
+                        <svg class="cs-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        <div><a href="mailto:hickmanroadcoc@gmail.com">hickmanroadcoc@gmail.com</a></div>
+                    </div>
+                    <div class="contact-sidebar__item">
+                        <svg class="cs-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                        <div style="font-size:0.875rem;color:#595961;line-height:1.65;">
+                            <strong style="color:#1c1c1e;display:block;margin-bottom:0.25rem;">Office Hours</strong>
+                            Mon – Thu · 9:00 am – 4:00 pm<br>Fri · 9:00 am – 12:00 pm
+                        </div>
+                    </div>
+                    <div class="contact-sidebar__map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d47726.13663338739!2d-93.690954!3d41.61503!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87ee9e9b1088c731%3A0x2dcc5c05e4bc207!2sHickman%20Road%20Church%20of%20Christ!5e0!3m2!1sen!2sus!4v1785357381232!5m2!1sen!2sus"
+                            width="100%"
+                            height="100%"
+                            style="border:0; min-height:12rem;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            title="Map showing Hickman Road Church of Christ location">
+                        </iframe>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Same footer — paste it here -->
+        <footer class="site-footer" aria-label="Site footer">
+        <div class="site-footer__inner">
+            <div class="site-footer__grid">
+                <div class="site-footer__col">
+                    <h2 class="site-footer__heading">Find Us</h2>
+                    <div style="display:flex;align-items:flex-start;gap:0.5rem;margin-bottom:1rem;">
+                        <svg class="ft-icon" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <address>5217 Hickman Road<br>Des Moines, IA 50310</address>
+                    </div>
+                    <div class="site-footer__map-placeholder">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d47726.13663338739!2d-93.690954!3d41.61503!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87ee9e9b1088c731%3A0x2dcc5c05e4bc207!2sHickman%20Road%20Church%20of%20Christ!5e0!3m2!1sen!2sus!4v1785357381232!5m2!1sen!2sus"
+                            width="100%"
+                            height="100%"
+                            style="border:0; min-height:7rem;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            title="Footer map showing Hickman Road Church of Christ location">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="site-footer__col">
+                    <h2 class="site-footer__heading">Service Times</h2>
+                    <ul class="site-footer__schedule" aria-label="Weekly service schedule">
+                        <li>
+                            <svg class="ft-icon" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            <div><strong>Sunday Morning</strong>
+                                <div>Bible Class · 9:30 am</div>
+                                <div>Worship · 10:30 am</div>
+                            </div>
+                        </li>
+                        <li>
+                            <svg class="ft-icon" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            <div><strong>Wednesday</strong>
+                                <div>Bible Study · 6:30 pm</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-footer__col">
+                    <h2 class="site-footer__heading">Connect</h2>
+                    <nav class="site-footer__social" aria-label="Social media links">
+                        <a href="https://www.facebook.com/hickmanroadchurchofchrist" aria-label="Visit our Facebook page" target="_blank" rel="noopener noreferrer">
+                            <svg class="ft-icon" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"
+                                aria-hidden="true">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                            </svg> Facebook
+                        </a>
+                        <a href="https://www.instagram.com/hickmanroadchurchofchrist/" aria-label="Visit our Instagram profile" target="_blank" rel="noopener noreferrer">
+                            <svg class="ft-icon" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg> Instagram
+                        </a>
+                    </nav>
+                    <a href="https://www.youtube.com/@hickmanroadchurchofchrist6056" class="site-footer__archive" aria-label="Browse sermon archive recordings" target="_blank" rel="noopener noreferrer">
+                        <svg class="ft-icon" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 00-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+                            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+                        </svg>
+                        YouTube Video Archive
+                    </a>
+                    <p class="site-footer__copy">© 2026 Hickman Road Church of Christ</p>
+                    <p class="site-footer__copy">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// _header.scss — Site header, primary navigation, mobile menu
+// ─────────────────────────────────────────────────────────────────────────────
+
+@use 'sass:color';
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ─── Site Header ─────────────────────────────────────────────────────────────
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: $color-bg;
+    border-bottom: 1px solid $color-border;
+    box-shadow: $shadow-sm;
+
+    &__inner {
+        @include container;
+        height: $header-height;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    // Logo button — the clickable logo area
+    &__logo {
+        display: flex;
+        align-items: center;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        transition: opacity $transition-fast;
+
+        &:hover {
+            opacity: 0.85;
+        }
+
+        // Descendant selectors — target each logo variant inside the button
+        .logo-full {
+            display: none;
+            height: 44px;
+            width: auto;
+            object-fit: contain;
+
+            @include respond-to($bp-md) {
+                display: block;
+            }
+        }
+
+        .logo-bug {
+            display: block;
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+
+            @include respond-to($bp-md) {
+                display: none;
+            }
+        }
+    }
+}
+
+// ─── Desktop Navigation ───────────────────────────────────────────────────────
+
+.site-nav {
+    display: none;
+    align-items: center;
+    gap: 0.25rem;
+
+    @include respond-to($bp-md) {
+        display: flex;
+    }
+
+    // Nav links — standard page links
+    &__link {
+        position: relative;
+        padding: 0.5rem 1rem;
+        display: inline-block;
+        font-family: $font-body;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: $color-fg;
+        background: none;
+        border: none;
+        cursor: pointer;
+        letter-spacing: 0.015em;
+        transition: color $transition-fast, transform $transition-fast;
+        text-decoration: none;
+
+
+        // Animated underline using a pseudo-element + transform
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 1rem;
+            right: 1rem;
+            height: 2px;
+            background-color: $color-primary;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform $transition-normal;
+        }
+
+        &:hover {
+            color: $color-primary;
+            text-decoration: none;
+            transform: scale(1.06);
+
+            &::after {
+                transform: scaleX(1);
+            }
+        }
+
+        &:focus-visible {
+            text-decoration: none;
+        }
+
+        // Attribute selector — targets the currently active page link
+        &[aria-current="page"] {
+            color: $color-primary;
+            font-weight: 600;
+
+            &::after {
+                transform: scaleX(1);
+            }
+        }
+    }
+
+    // Watch Live CTA button — distinct from regular nav links
+    &__cta {
+        @include btn-base;
+        margin-left: $space-sm;
+        padding: 0.5rem 1.25rem;
+        background-color: $color-accent;
+        color: $color-accent-text;
+
+        &:hover {
+            background-color: color.adjust($color-accent, $lightness: -12%);
+        }
+    }
+}
+
+// ─── Hamburger (Mobile Menu Toggle) ──────────────────────────────────────────
+
+.hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $color-fg;
+    transition: color $transition-fast;
+
+    @include respond-to($bp-md) {
+        display: none;
+    }
+
+    &:hover {
+        color: $color-primary;
+    }
+}
+
+// ─── Mobile Navigation Drawer ────────────────────────────────────────────────
+
+.mobile-nav {
+    background-color: $color-bg;
+    border-top: 1px solid $color-border;
+
+    // Hidden attribute support — hides drawer when not open
+    &[hidden] {
+        display: none;
+    }
+
+    @include respond-to($bp-md) {
+        display: none !important;
+    }
+
+    // Mobile nav links — full-width tap targets
+    &__link {
+        display: block;
+        width: 100%;
+        padding: 1rem 1.5rem;
+        font-family: $font-body;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-align: left;
+        background: none;
+        border: none;
+        border-bottom: 1px solid $color-border;
+        cursor: pointer;
+        color: $color-fg;
+        transition: background-color $transition-fast, color $transition-fast;
+        text-decoration: none;display: block;
+
+        &:hover {
+            background-color: $color-secondary;
+            color: $color-primary;
+        }
+
+        // Attribute selector — highlights the current page in the mobile menu
+        &[aria-current="page"] {
+            color: $color-primary;
+            font-weight: 600;
+            background-color: rgba($color-secondary, 0.6);
+        }
+
+        // Watch Live CTA variant
+        &--cta {
+            background-color: $color-accent;
+            color: $color-accent-text;
+            font-weight: 600;
+
+            &:hover {
+                background-color: color.adjust($color-accent, $lightness: -10%);
+                color: $color-accent-text;
+            }
+        }
+    }
+}

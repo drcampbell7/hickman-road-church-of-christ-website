@@ -1,0 +1,31 @@
+// =============================================================================
+// HICKMAN ROAD CHURCH OF CHRIST — Main Stylesheet
+// Compiled by Sass/SCSS
+//
+// To edit styles:
+//   Colors, fonts, spacing  →  _variables.scss
+//   Reusable layout mixins  →  _mixins.scss
+//   Page-specific sections  →  _pages.scss
+//   Buttons, cards, forms   →  _components.scss
+//   Animations / motion     →  _animations.scss
+//   Header & navigation     →  _header.scss
+//   Footer                  →  _footer.scss
+// =============================================================================
+
+// ─── Foundation (must be first — other partials depend on these) ──────────────
+@use 'variables'  as *;   // $colors, $fonts, $breakpoints, $spacing
+@use 'mixins'     as *;   // respond-to, flex-row, grid, btn-base, etc.
+@use 'base';              // Reset additions, html/body defaults, focus styles
+
+// ─── Motion ──────────────────────────────────────────────────────────────────
+@use 'animations';        // @keyframes + animation utility classes
+
+// ─── Layout Regions ──────────────────────────────────────────────────────────
+@use 'header';            // .site-header, .site-nav, .hamburger, .mobile-nav
+@use 'footer';            // .site-footer
+
+// ─── Reusable UI Components ──────────────────────────────────────────────────
+@use 'components';        // .btn, .ministry-card, .form, .person-card, etc.
+
+// ─── Page-Specific Sections ───────────────────────────────────────────────────
+@use 'pages';             // .hero, .about sections, .contact-page, etc.

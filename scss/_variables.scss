@@ -1,0 +1,83 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// _variables.scss — Design tokens for Hickman Road Church of Christ
+// Edit this file to change colors, fonts, spacing, and breakpoints site-wide.
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ─── Color Palette ───────────────────────────────────────────────────────────
+// Sourced from the HRCOC logo: sky blue, sunrise orange, charcoal
+
+$color-bg:            #ffffff;
+$color-fg:            #1c1c1e;
+
+// Primary — deep sky blue (WCAG AA: 5.8:1 on white)
+$color-primary:       #005c84;
+$color-primary-text:  #ffffff;
+
+// Accent — sunrise orange from logo (used with dark text for WCAG AA)
+$color-accent:        #f7941d;
+$color-accent-text:   #1c1c1e;   // 7:1 contrast ratio — AA compliant
+
+// Secondary & muted surfaces
+$color-secondary:     #e0f4fb;   // pale sky tint
+$color-muted:         #f0fafd;
+$color-muted-fg:      #595961;   // 6.7:1 on white — AA compliant
+
+// Borders
+$color-border:        rgba(0, 92, 132, 0.16);
+
+// Dark surfaces (footer, overlays)
+$color-footer-bg:     #2d2d31;
+
+// Status colors
+$color-success:       #2d7a4f;
+$color-error:         #b91c1c;
+
+// ─── Typography ──────────────────────────────────────────────────────────────
+
+$font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+$font-body:    'Source Sans 3', 'Segoe UI', Helvetica, Arial, sans-serif;
+
+// ─── Spacing Scale ───────────────────────────────────────────────────────────
+
+$space-xs:   0.5rem;    //  8px
+$space-sm:   1rem;      // 16px
+$space-md:   1.5rem;    // 24px
+$space-lg:   2.5rem;    // 40px
+$space-xl:   4rem;      // 64px
+$space-2xl:  5rem;      // 80px
+$section-v:  5rem;      // default vertical section padding
+
+// ─── Breakpoints (mobile-first) ──────────────────────────────────────────────
+
+$bp-sm:  480px;    // large phones
+$bp-md:  768px;    // tablets
+$bp-lg:  1024px;   // laptops
+$bp-xl:  1280px;   // large desktops
+
+// ─── Container ───────────────────────────────────────────────────────────────
+
+$container-max: 1280px;
+$container-pad: 1.5rem;
+
+// ─── Border & Radius ─────────────────────────────────────────────────────────
+
+$radius-sm:   2px;
+$radius-md:   4px;
+$radius-pill: 9999px;
+
+// ─── Shadows ─────────────────────────────────────────────────────────────────
+
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+$shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.18);
+
+// ─── Transition Speeds ───────────────────────────────────────────────────────
+
+$transition-fast:   0.15s ease;
+$transition-normal: 0.25s ease;
+$transition-slow:   0.45s ease;
+
+// ─── Layout ──────────────────────────────────────────────────────────────────
+
+$header-height:  72px;
+$subnav-height:  48px;
