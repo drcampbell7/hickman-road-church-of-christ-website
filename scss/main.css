@@ -665,6 +665,13 @@ textarea:focus-visible {
 .btn--accent:hover {
   background-color: rgb(217.3076923077, 122.1153846154, 7.6923076923);
 }
+.btn--visit {
+  background-color: #00AEEF;
+  color: #1c1c1e;
+}
+.btn--visit:hover {
+  background-color: #008bc0;
+}
 .btn--outline {
   background-color: transparent;
   color: #005c84;

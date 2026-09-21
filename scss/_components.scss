@@ -89,6 +89,13 @@
     &:hover { background-color: color.adjust($color-accent, $lightness: -10%); }
   }
 
+  &--visit {
+    background-color: #00AEEF;
+    color: $color-accent-text;
+
+    &:hover { background-color: #008bc0; }
+  }
+
   // Outline on light backgrounds
   &--outline {
     background-color: transparent;
