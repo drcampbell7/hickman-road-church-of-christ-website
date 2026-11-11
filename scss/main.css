@@ -252,7 +252,7 @@ textarea:focus-visible {
   align-items: center;
   gap: 0.25rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .site-nav {
     display: flex;
   }
@@ -353,7 +353,7 @@ textarea:focus-visible {
   color: #1c1c1e;
   transition: color 0.15s ease;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .hamburger {
     display: none;
   }
@@ -369,7 +369,7 @@ textarea:focus-visible {
 .mobile-nav[hidden] {
   display: none;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .mobile-nav {
     display: none !important;
   }
@@ -1183,6 +1183,55 @@ textarea:focus-visible {
   display: block;
   font-size: 1rem;
   margin-bottom: 0.25rem;
+}
+
+.giving-quote {
+  margin: 2rem 0 0;
+  color: #1c1c1e;
+}
+.giving-quote blockquote {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-style: italic;
+  line-height: 1.7;
+}
+.giving-quote figcaption {
+  margin-top: 0.75rem;
+  color: #595961;
+}
+
+.giving {
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+.giving h2 {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: 1rem;
+}
+.giving p {
+  color: #595961;
+  margin-bottom: 1.5rem;
+}
+.giving a {
+  display: inline-block;
+}
+
+.calendar {
+  padding: 5rem 1.5rem;
+}
+.calendar__inner {
+  max-width: 62rem;
+  margin-inline: auto;
+}
+.calendar iframe {
+  display: block;
+  width: 100%;
+  height: 600px;
+  border: 0;
+}
+.calendar p {
+  margin-top: 1rem;
 }
 
 .page-intro {

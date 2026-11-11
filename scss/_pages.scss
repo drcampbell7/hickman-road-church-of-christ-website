@@ -38,6 +38,63 @@
   }
 }
 
+.giving-quote {
+  margin: 2rem 0 0;
+  color: $color-fg;
+
+  blockquote {
+    margin: 0;
+    font-family: $font-display;
+    font-style: italic;
+    line-height: 1.7;
+  }
+
+  figcaption {
+    margin-top: 0.75rem;
+    color: $color-muted-fg;
+  }
+}
+
+.giving {
+  padding: 5rem 1.5rem;
+  text-align: center;
+
+  h2 {
+    font-family: $font-display;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: $color-muted-fg;
+    margin-bottom: 1.5rem;
+  }
+
+  a {
+    display: inline-block;
+  }
+}
+
+.calendar {
+  padding: 5rem 1.5rem;
+
+  &__inner {
+    max-width: 62rem;
+    margin-inline: auto;
+  }
+
+  iframe {
+    display: block;
+    width: 100%;
+    height: 600px;
+    border: 0;
+  }
+
+  p {
+    margin-top: 1rem;
+  }
+}
+
 // ─── HOME: Hero ───────────────────────────────────────────────────────────────
 
 .hero {

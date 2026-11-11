@@ -70,7 +70,7 @@
     align-items: center;
     gap: 0.25rem;
 
-    @include respond-to($bp-md) {
+    @include respond-to($bp-lg) {
         display: flex;
     }
 
@@ -159,7 +159,7 @@
     color: $color-fg;
     transition: color $transition-fast;
 
-    @include respond-to($bp-md) {
+    @include respond-to($bp-lg) {
         display: none;
     }
 
@@ -179,7 +179,7 @@
         display: none;
     }
 
-    @include respond-to($bp-md) {
+    @include respond-to($bp-lg) {
         display: none !important;
     }
 
