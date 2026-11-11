@@ -119,7 +119,13 @@
     }
   }
 
-  // Sermon archive link
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  // Footer action links
   &__archive {
     display: inline-flex;
     align-items: center;

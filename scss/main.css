@@ -508,6 +508,11 @@ textarea:focus-visible {
 .site-footer__social a:visited .ft-icon {
   flex-shrink: 0;
 }
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
 .site-footer__archive {
   display: inline-flex;
   align-items: center;
